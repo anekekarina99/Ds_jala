@@ -249,3 +249,97 @@ I hope this clarifies the documentation for both the API and the test script!
 * If the API requires authentication, add details on how to authenticate requests in the documentation.
 
 I hope this comprehensive documentation is helpful!
+Certainly, here's the documentation for the provided code (`sr_main.py`) and its test script (`test_sr.py`):
+
+**API Documentation (sr_main.py.md)**
+
+**Title:** SR Prediction API
+
+**Description:** This Flask API leverages a pre-trained linear regression model (`sr_model.joblib`) to predict a value denoted by `sr%` (possibly removal rate percentage) based on a single input feature:
+
+* `average_weight`: This likely represents the average weight of some relevant object(s).
+
+**Dependencies:**
+
+* Flask
+* scikit-learn
+* joblib
+
+**Endpoints:**
+
+* `/predict_sr` (**POST**): This endpoint accepts a JSON request containing the `average_weight` and returns the predicted `sr%` value in JSON format.
+
+**Request Format:**
+
+```json
+{
+  "average_weight": <average weight value>
+}
+```
+
+**Response Format:**
+
+```json
+{
+  "sr%": <predicted removal rate percentage as a list>
+}
+```
+
+**Example Usage:**
+
+```bash
+curl -X POST -H 'Content-Type: application/json' -d '{"average_weight": 10}' http://localhost:5000/predict_sr
+```
+
+**Expected Response:**
+
+```json
+{
+  "sr%": [<predicted SR%>]
+}
+```
+
+**Notes:**
+
+* The pre-trained linear regression model (`sr_model.joblib`) needs to be present in the same directory as this script.
+* The API runs in debug mode (`debug=True`) when executed directly. For production deployment, consider setting it to `False`.
+
+**Test Script Documentation (test_sr.py.md)**
+
+**Title:** SR Prediction API Test Script
+
+**Description:** This script demonstrates making a POST request to the API endpoint and displaying the predicted `sr%` for a specific `average_weight`.
+
+**Dependencies:**
+
+* requests
+
+**Script:**
+
+```python
+import requests
+import json
+
+url = 'http://localhost:5000/predict_sr'
+data = {"average_weight": 5}
+
+response = requests.post(url, json=data)
+print(response.json())
+```
+
+**Output:**
+
+```json
+{
+  "sr%": [<predicted SR%>]
+}
+```
+
+**Testing Instructions:**
+
+1. Ensure the Flask API (`sr_main.py`) is running (e.g., `python sr_main.py`).
+2. Run the test script (`python test_sr.py`).
+
+The script will display the predicted `sr%` value based on the provided `average_weight`, as estimated by the API.
+
+I hope this comprehensive documentation is helpful!
