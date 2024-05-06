@@ -194,6 +194,56 @@ The script will display the predicted `sr%` value based on the provided input va
 
 **Additional Notes:**
 
+Absolutely, here's the updated documentation incorporating the new test script (`test_bio.py`):
+
+**API Documentation (abw_main.py.md)** (Unchanged)
+
+**Test Script Documentation (test_bio.py.md)**
+
+**Title:** Biomass Prediction API Test Script (assuming the API endpoint is `/predict_bio` based on the test script)
+
+**Description:** This script demonstrates making a POST request to the API endpoint and displaying the predicted biomass value for specific values of `total_seed` and `area`.
+
+**Dependencies:**
+
+* requests
+
+**Script:**
+
+```python
+import requests
+import json
+
+url = 'http://localhost:5000/predict_bio'  # Assuming the endpoint is /predict_bio
+data = {"total_seed": 5, "area": 8}
+
+response = requests.post(url, json=data)
+print(response.json())
+```
+
+**Output:**
+
+```json
+{
+  "biomass": [<predicted biomass value>]  # Assuming the response key is "biomass"
+}
+```
+
+**Testing Instructions:**
+
+1. Ensure the Flask API (`abw_main.py`) is running (e.g., `python abw_main.py`).
+2. Run the test script (`python test_bio.py`).
+
+The script will display the predicted biomass value based on the provided input values, as estimated by the API.
+
+**Important Notes:**
+
+* The API documentation (abw_main.py.md) remains unchanged as it describes the functionality of the Flask API itself.
+* This test script assumes the API endpoint for biomass prediction is `/predict_bio` based on the code snippet. Update the URL in the script if the actual endpoint is different.
+* The response format is also assumed to contain a key named `"biomass"` for the predicted value. Adjust the script's output parsing if the response key has a different name.
+
+I hope this clarifies the documentation for both the API and the test script!
+
 * Consider replacing placeholders like `<predicted SR%>` with actual values for clarity.
 * You can expand the documentation to include information about the linear regression model's training data, performance metrics, and limitations.
 * If the API requires authentication, add details on how to authenticate requests in the documentation.
