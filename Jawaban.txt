@@ -30,4 +30,4 @@ Rekomendasi budidaya udang:
 
  g. Link ke repository (github) ke project disertai instruksi jelas bagaimana
  menjalankan service serta dokumentasi dari API.
-(Readme)
+(Readme.md)
