@@ -7,7 +7,7 @@ model = joblib.load('abw_model.joblib')
 
 app = Flask(__name__)
 
-@app.route('/predict_abw', methods=['POST'])
+@app.route('/predict_bip', methods=['POST'])
 def predict():
     # Get input data from request
     data = request.get_json()

@@ -7,7 +7,7 @@ model = joblib.load('rev_model.joblib')
 
 app = Flask(__name__)
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict_rv', methods=['POST'])
 def predict():
     # Get input data from request
     data = request.get_json()
