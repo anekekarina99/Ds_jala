@@ -2,7 +2,7 @@ I'd be glad to create the documentation (.md) for your Flask API and test script
 
 **API Documentation (rev_main.py.md)**
 
-**Title:** Used Car Price Prediction API
+**Title:** Used Revenue Price Prediction API
 
 **Description:** This Flask API utilizes a pre-trained linear regression model to predict the selling price of a used car based on its weight.
 
