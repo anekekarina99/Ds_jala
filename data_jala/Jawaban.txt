@@ -1,0 +1,33 @@
+a. Hasil evaluasi kelengkapan data
+ada dalam DS_JalaTech_preprocessing.ipynb pada Proses Preprocessing
+b. Hasil perhitungan SR dan ADG udang di setiap siklus budidaya
+ada dalam data_sr.csv(hasil SR) dan adr_g.csv(hasil adr)
+ c. Hasil prediksi model
+ ada dalam harvest_model.ipynb untuk revenue cost,sr_model untuk sr, biomass_model.ipynb untuk prediksi biomass
+ abw_model utuk prediksi abw
+ d. Kesimpulan dan penjelasan terkait fitur atau variabel apa yang penting
+ dalam membuat prediksi
+
+ kalau revenue cost paling berpengaruh adalah weight
+ kalau sr paling berpengaruh adalah abw sebab (dilakukan analisa antar tabel berulang ulang, diambil variabel paling besar korelasi,antar tabel )
+ kalau biomass paling berpengaruh adalah total_seed
+ kalau abw paling berpengaruh adalah usia budi daya dan jumlah sampel dalam gram
+ e. Rekomendasi mengenai bagaimana budidaya udang perlu dilakukan
+ untuk mencapat hasil yang optimal
+ 
+Pengelolaan Populasi dan Penyebaran Benih: Memastikan jumlah sampel udang yang memadai dan penyebaran benih yang optimal dalam kolam budidaya dapat membantu meningkatkan tingkat produksi udang. Selain itu, memperhatikan lebar kolam juga penting untuk mengoptimalkan penyebaran benih.
+Pengendalian Faktor Lingkungan dan Nutrisi: Mengontrol faktor-faktor seperti jumlah pakan, keadaan fasting, dan berat panen dapat berkontribusi pada peningkatan biomassa udang. Pemantauan kontrol anco dan pengaturan lebar kolam juga perlu diperhatikan untuk mengoptimalkan pertumbuhan udang.
+Manajemen Kualitas dan Pemasaran: Menjaga kualitas udang dengan memperhatikan rata-rata berat udang (ABW), jumlah ekor udang, dan penyebaran benih akan mempengaruhi harga penjualan udang. Dengan demikian, fokus pada peningkatan ABW dan pengelolaan populasi udang secara efisien dapat meningkatkan nilai jual hasil budidaya.
+ f.
+ Based on the data that you analyzed, make recommendations on how
+ shrimp farming should be done to achieve optimal results
+
+Rekomendasi budidaya udang:
+1. Pengelolaan populasi dan penyebaran benih melalui perhitungan jumlah udang dan penyebaran benih yang cermat.
+2. Kontrol faktor lingkungan dan nutrisi dengan pengaturan pakan, fasting, dan pengawasan lingkungan.
+3. Manajemen kualitas dan pemasaran dengan memperhatikan berat udang, jumlah ekor, penyebaran benih, dan usia budidaya.
+4. Pengelolaan biaya dan pendapatan dengan perhitungan biaya yang berpengaruh serta analisis korelasi untuk strategi keuangan yang efektif.
+
+ g. Link ke repository (github) ke project disertai instruksi jelas bagaimana
+ menjalankan service serta dokumentasi dari API.
+Bisa dibaca dalam Readme.md
