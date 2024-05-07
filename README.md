@@ -442,3 +442,82 @@ The script will display the predicted selling price for a car weighing 5 kg, as 
 * If the API requires authentication, add details on how to authenticate requests in the documentation.
 
 I hope this comprehensive documentation is helpful!
+
+Absolutely, here's the formatted README.md for your Flask biomass prediction API:
+
+## Biomass Prediction API
+
+This documentation describes a Flask API for predicting biomass using a pre-trained machine learning model.
+
+### Description
+
+The model is a linear regression model trained on biomass data. The API accepts POST requests with JSON data containing two features: `bd_daya` and `sum_sample_g`. It returns a JSON response containing the predicted value of the biomass.
+
+### Endpoints
+
+* **`/predict_bio`** (**Method:** POST)
+
+Predicts biomass using the pre-trained machine learning model.
+
+### Request Body
+
+The request body should be a JSON object containing two keys:
+
+* `bd_daya`: A numerical value representing a feature used for prediction.
+* `sum_sample_g`: A numerical value representing another feature used for prediction.
+
+**Example Request Body:**
+
+```json
+{
+  "bd_daya": 10,
+  "sum_sample_g": 20
+}
+```
+
+### Response
+
+The response is a JSON object containing the predicted value of the biomass. The value is wrapped in a list, even though the model might only predict a single value.
+
+**Example Response:**
+
+```json
+{
+  "sr%": [15.6789]
+}
+```
+
+### Testing
+
+You can test the API using the following Python script:
+
+```python
+import requests
+import json
+
+url = 'http://localhost:5000/predict_bio'
+
+data = {"bd_daya": 10, "sum_sample_g": 20}
+
+response = requests.post(url, json=data)
+print(response.json())
+```
+
+Replace the `data` dictionary with your desired input data. The script sends a POST request to the `/predict_bio` endpoint with the input data and prints the response.
+
+### Deployment
+
+To deploy the API, run the following command:
+
+```bash
+python bio_main.py
+```
+
+This starts the Flask server on localhost at port 5000. You can then access the API as described in the Testing section.
+
+### Notes
+
+* The pre-trained machine learning model is loaded from a file called `abw_model.joblib`. Ensure this file is in the same directory as the `bio_main.py` file.
+* The API only accepts POST requests with JSON data. Other types of requests or data formats will result in an error.
+* The API returns a list containing the predicted value even though the model might predict a single value. This is a potential limitation to consider depending on your specific use case.
+
